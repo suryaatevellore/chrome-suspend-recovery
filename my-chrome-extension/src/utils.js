@@ -1,7 +1,7 @@
 function transformUrl(originalUrl) {
-    // Check if the URL is a suspended tab with a &uri= parameter
-    const suspendedPrefix = 'chrome-extension://egphkchlgpkjfpffgpnjilpgaocjdlfp/suspended.html#';
-    if (originalUrl.startsWith(suspendedPrefix)) {
+    // Regex to match chrome-extension://<random>/suspended.html#
+    const suspendedRegex = /^chrome-extension:\/\/[a-z]{32}\/suspended\.html#/;
+    if (suspendedRegex.test(originalUrl)) {
         // Extract the fragment after '#'
         const fragment = originalUrl.split('#')[1];
         const params = new URLSearchParams(fragment);
