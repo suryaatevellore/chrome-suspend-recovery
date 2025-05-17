@@ -1,9 +1,4 @@
-function transformUrl(url) {
-    // Example transformation: append a query parameter
-    const newUrl = new URL(url);
-    newUrl.searchParams.set('modified', 'true');
-    return newUrl.toString();
-}
+import { transformUrl } from './utils.js';
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === 'complete' && tab.active) {
