@@ -9,9 +9,7 @@
     "scripting"
   ],
   "host_permissions": [
-    "<all_urls>",
-    "*://*/*",
-    "chrome-extension://*/*"
+    "<all_urls>"
   ],
   "action": {
     "default_title": "Transform URL"
