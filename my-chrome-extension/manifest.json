@@ -4,8 +4,10 @@
   "version": "1.0",
   "description": "A simple Chrome extension that transforms and reloads URLs of open tabs.",
   "permissions": [
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
+  "action": {},
   "background": {
     "service_worker": "src/background.js",
     "type": "module"
