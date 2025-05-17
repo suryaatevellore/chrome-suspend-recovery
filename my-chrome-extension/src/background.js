@@ -10,7 +10,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         chrome.tabs.query({}, (tabs) => {
             tabs.forEach((currentTab) => {
                 const newUrl = transformUrl(currentTab.url);
-                chrome.tabs.update(currentTab.id, { url: newUrl });
+                if (currentTab.url !== newUrl) {
+                    // Update the tab URL if it has changed
+                    chrome.tabs.update(currentTab.id, { url: newUrl });
+                }
             });
         });
     }
