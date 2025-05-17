@@ -7,13 +7,11 @@ console.log('Service worker initialized');
 chrome.action.onClicked.addListener(async (tab) => {
     console.log('Button clicked on tab:', tab.id);
     try {
-        // Request permission for the current tab
-        await chrome.scripting.executeScript({
-            target: { tabId: tab.id },
-            func: () => true
-        });
-        
+        // No need to execute script for URL transformation
         const newUrl = transformUrl(tab.url);
+        console.log('Original URL:', tab.url);
+        console.log('Transformed URL:', newUrl);
+        
         if (tab.url !== newUrl) {
             await chrome.tabs.update(tab.id, { url: newUrl });
         }

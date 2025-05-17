@@ -4,14 +4,10 @@
   "version": "1.0",
   "description": "A simple Chrome extension that transforms and reloads URLs of open tabs.",
   "permissions": [
-    "tabs",
-    "activeTab",
-    "scripting",
-    "webNavigation"
+    "tabs"
   ],
   "host_permissions": [
-    "<all_urls>",
-    "*://*/*"
+    "<all_urls>"
   ],
   "action": {
     "default_title": "Transform URL"
