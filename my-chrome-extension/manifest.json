@@ -6,10 +6,12 @@
   "permissions": [
     "tabs",
     "activeTab",
-    "scripting"
+    "scripting",
+    "webNavigation"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "<all_urls>",
+    "*://*/*"
   ],
   "action": {
     "default_title": "Transform URL"
